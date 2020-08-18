@@ -1,0 +1,174 @@
+
+Mourad@Mourad-PC MINGW32 ~
+$ cd desktop
+
+Mourad@Mourad-PC MINGW32 ~/desktop
+$ cd learn_git_again
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again
+$ git init
+Initialized empty Git repository in C:/Users/Mourad/Desktop/learn_git_again/.git/
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git add .
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   third.txt
+
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git commit -m "adding third.txt"
+[master (root-commit) 6f479b2] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git log
+commit 6f479b2bbc23570fd41f9d98380658b1d67202c1 (HEAD -> master)
+Author: fredjfathia <fredjfathia11@gmail.com>
+Date:   Tue Aug 18 10:55:29 2020 +0200
+
+    adding third.txt
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git checkout 6f479b2bbc23570fd41f9d98380658b1d67202c1
+Note: switching to '6f479b2bbc23570fd41f9d98380658b1d67202c1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 6f479b2 adding third.txt
+M       third.txt
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again ((6f479b2...))
+$ git checkout master
+Switched to branch 'master'
+M       third.txt
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git add 'fourth.txt'
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   fourth.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   third.txt
+
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git commit -m "adding fourth.txt"
+[master 2943dfe] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git add .
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    third.txt
+
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git commit -m "removing third.txt"
+[master 981fdad] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git log
+commit 981fdadaa3c6b00347d09ef7c308530e716ff383 (HEAD -> master)
+Author: fredjfathia <fredjfathia11@gmail.com>
+Date:   Tue Aug 18 11:12:47 2020 +0200
+
+    removing third.txt
+
+commit 2943dfe940798f895d3768036f09981d258b3290
+Author: fredjfathia <fredjfathia11@gmail.com>
+Date:   Tue Aug 18 11:09:40 2020 +0200
+
+    adding fourth.txt
+
+commit 6f479b2bbc23570fd41f9d98380658b1d67202c1
+Author: fredjfathia <fredjfathia11@gmail.com>
+Date:   Tue Aug 18 10:55:29 2020 +0200
+
+    adding third.txt
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again (master)
+$ git checkout 981f
+Note: switching to '981f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 981fdad removing third.txt
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again ((981fdad...))
+$ git config --global core.pager cat
+
+Mourad@Mourad-PC MINGW32 ~/desktop/learn_git_again ((981fdad...))
+$ git config --list
+pack.packsizelimit=2g
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw32/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+user.email=fredjfathia11@gmail.com
+user.name=fredjfathia
+gui.recentrepo=C:/Users/Mourad/newrepository
+core.pager=cat
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
